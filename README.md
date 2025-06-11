@@ -12,9 +12,11 @@ Verify that the API returns the current temperature and the city name Warsaw.
 
 **Kroki testowe / Test steps:**
 - Wykonaj zapytanie GET do `/data/2.5/weather?q=Warsaw`.
-- Sprawdź, czy kod odpowiedzi to 200.
-- Zweryfikuj, czy pole `name` w odpowiedzi to `Warsaw`.
-- Sprawdź, czy pole `main.temp` istnieje i jest liczbą.
+
+**Oczekiwane rezultaty/Expected results:**
+- Kod odpowiedzi to **200**.
+- W odpowiedzi pole `name` ma wartość **"Warsaw"**.
+- W odpowiedzi pole `main.temp` istnieje i jest liczbą.
 
 <br><br>
 
@@ -28,8 +30,10 @@ Check error handling for a fictional city Neverland.
 
 **Kroki testowe / Test steps:**
 - Wykonaj zapytanie GET do `/data/2.5/weather?q=Neverland`.
-- Sprawdź, czy kod odpowiedzi to 404 lub 400.
-- Zweryfikuj, czy odpowiedź zawiera komunikat o błędzie (`message`).
+  
+**Oczekiwane rezultaty:**
+- Kod odpowiedzi to **404** lub **400**.
+- W odpowiedzi znajduje się pole `message` z komunikatem o błędzie.
 
 <br><br>
 
@@ -43,9 +47,11 @@ Verify that the API returns a 5-day forecast for Warsaw.
 
 **Kroki testowe / Test steps:**
 - Wykonaj zapytanie GET do `/data/2.5/forecast?q=Warsaw`.
-- Sprawdź, czy kod odpowiedzi to 200.
-- Zweryfikuj, czy w odpowiedzi znajduje się pole `list` (tablica prognoz).
-- Sprawdź, czy pole `city.name` to `Warsaw`.
+
+**Oczekiwane rezultaty:**
+- Kod odpowiedzi to **200**.
+- W odpowiedzi znajduje się pole `list` będące tablicą prognoz.
+- Pole `city.name` ma wartość **"Warsaw"**.
 
 <br><br>
 
@@ -59,11 +65,13 @@ Verify that the API returns correct wind speed and direction data, and that valu
 
 **Kroki testowe / Test steps:**
 - Wykonaj zapytanie GET do `/data/2.5/weather?q=Warsaw`.
-- Sprawdź, czy kod odpowiedzi to 200.
-- Zweryfikuj, czy w odpowiedzi znajduje się obiekt `wind` z polami `speed` i `deg`.
-- Sprawdź, czy `wind.speed` jest liczbą ≥ 0.
-- Sprawdź, czy `wind.deg` jest liczbą z zakresu 0–360.
 
+**Oczekiwane rezultaty:**
+- Kod odpowiedzi to **200**.
+- W odpowiedzi znajduje się obiekt `wind` z polami `speed` i `deg`.
+- `wind.speed` jest liczbą większą lub równą 0.
+- `wind.deg` jest liczbą z zakresu 0–360.
+  
 <br><br>
 
 ## 5. Walidacja wilgotności, ciśnienia i zachmurzenia
@@ -76,11 +84,12 @@ Verify that the API returns humidity, pressure, and cloudiness data, and that th
 
 **Kroki testowe / Test steps:**
 - Wykonaj zapytanie GET do `/data/2.5/weather?q=Warsaw`.
-- Sprawdź, czy kod odpowiedzi to 200.
-- Zweryfikuj obecność pól: `main.humidity`, `main.pressure`, `clouds.all`.
-- Sprawdź, czy wilgotność (`main.humidity`) to liczba 0–100.
-- Sprawdź, czy ciśnienie (`main.pressure`) to liczba > 800.
-- Sprawdź, czy zachmurzenie (`clouds.all`) to liczba 0–100.
+
+**Oczekiwane rezultaty:**
+- Kod odpowiedzi to **200**.
+- W odpowiedzi znajduje się pole `main.humidity` (liczba 0–100).
+- W odpowiedzi znajduje się pole `main.pressure` (liczba większa od 800).
+- W odpowiedzi znajduje się pole `clouds.all` (liczba 0–100).
 
 <br><br>
 
@@ -92,13 +101,16 @@ Pobierz aktualną temperaturę z endpointu /weather i zapisz ją. Następnie pob
 **Description (EN):**  
 Fetch the current temperature from the /weather endpoint and save it. Then fetch the temperature from the nearest forecast from the /forecast endpoint and compare both values. Print both temperatures in the console.
 
-**Kroki testowe / Test steps:**
-- Wykonaj zapytanie GET do /data/2.5/weather?q=Warsaw.
-- W zakładce Tests zapisz temperaturę do zmiennej środowiskowej current_temp.
-- Wykonaj zapytanie GET do /data/2.5/forecast?q=Warsaw.
-- W zakładce Tests pobierz temperaturę z pierwszego elementu tablicy list.main.temp.
-- Porównaj ją ze zmienną current_temp.
-- Wypisz obie temperatury w konsoli.
+**Kroki testowe:**
+1. Wykonaj zapytanie GET do `/data/2.5/weather?q=Warsaw` i zapisz wartość `main.temp` do zmiennej środowiskowej `current_temp`.
+2. Wykonaj zapytanie GET do `/data/2.5/forecast?q=Warsaw`.
+3. Pobierz temperaturę z pierwszego elementu tablicy `list[0].main.temp`.
+4. Wypisz w konsoli Postmana obie temperatury: aktualną i prognozowaną.
+
+
+**Oczekiwane rezultaty:**
+- Obie temperatury są widoczne w konsoli Postmana.
+
 
 <br><br>
 
