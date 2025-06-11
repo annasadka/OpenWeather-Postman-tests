@@ -84,17 +84,21 @@ Verify that the API returns humidity, pressure, and cloudiness data, and that th
 
 <br><br>
 
-## 6. Aktualna pogoda – Warszawa – Porównanie danych z różnych endpointów
+## 6. Aktualna pogoda i prognoza – porównanie temperatur dla Warszawy
 
 **Opis (PL):**  
-Zapisz aktualną temperaturę z endpointu `/weather` dla Warszawy do zmiennej środowiskowej.
+Pobierz aktualną temperaturę z endpointu /weather i zapisz ją. Następnie pobierz temperaturę z najbliższej prognozy z endpointu /forecast i porównaj obie wartości. Wypisz obie temperatury w konsoli.
 
 **Description (EN):**  
-Save the current temperature from the `/weather` endpoint for Warsaw to an environment variable.
+Fetch the current temperature from the /weather endpoint and save it. Then fetch the temperature from the nearest forecast from the /forecast endpoint and compare both values. Print both temperatures in the console.
 
 **Kroki testowe / Test steps:**
-- Wykonaj zapytanie GET do `/data/2.5/weather?q=Warsaw`.
-- Zapisz wartość `main.temp` do zmiennej środowiskowej `current_temp`.
+-Wykonaj zapytanie GET do /data/2.5/weather?q=Warsaw.
+-W zakładce Tests zapisz temperaturę do zmiennej środowiskowej current_temp.
+-Wykonaj zapytanie GET do /data/2.5/forecast?q=Warsaw.
+-W zakładce Tests pobierz temperaturę z pierwszego elementu tablicy list.main.temp.
+-Porównaj ją ze zmienną current_temp.
+-Wypisz obie temperatury w konsoli.
 
 <br><br>
 
