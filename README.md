@@ -33,7 +33,7 @@ Check error handling for a fictional city Neverland.
 
 <br><br>
 
-## 3. Prognoza 5-dniowa dla poprawnego miasta
+## 3. Prognoza 5-dniowa dla Warszawy
 
 **Opis (PL):**  
 Sprawdzenie, czy API zwraca prognozę 5-dniową dla Warszawy.
