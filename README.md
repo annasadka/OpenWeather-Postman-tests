@@ -1,8 +1,21 @@
 # OpenWeather-Postman-tests
 
-Przypadki testowe
+## Opis projektu
+Projekt prezentuje przykładowe testy automatyczne API pogodowego OpenWeatherMap wykonane w Postmanie. Celem było przećwiczenie walidacji odpowiedzi API, obsługi błędów i porównania danych z różnych endpointów.
 
-## 1. Aktualna pogoda Warszawa
+## Technologie
+- Postman
+- OpenWeatherMap API
+
+## Jak uruchomić testy?
+1. Sklonuj repozytorium.
+2. Zaimportuj plik kolekcji do Postmana.
+3. Ustaw swój klucz API jako zmienną środowiskową `api_key`.
+4. Uruchom testy ręcznie lub przez Collection Runner.
+
+## Przypadki testowe
+
+### 1. Aktualna pogoda Warszawa
 
 **Opis (PL):**  
 Sprawdzenie, czy API zwraca aktualną temperaturę i nazwę miasta Warszawa.
@@ -18,9 +31,9 @@ Verify that the API returns the current temperature and the city name Warsaw.
 - W odpowiedzi pole `name` ma wartość **"Warsaw"**.
 - W odpowiedzi pole `main.temp` istnieje i jest liczbą.
 
-<br><br>
+<br>
 
-## 2. Aktualna pogoda dla nieistniejącego miasta (Neverland)
+### 2. Aktualna pogoda dla nieistniejącego miasta (Neverland)
 
 **Opis (PL):**  
 Sprawdzenie obsługi błędów dla fikcyjnego miasta Neverland.
@@ -35,9 +48,9 @@ Check error handling for a fictional city Neverland.
 - Kod odpowiedzi to **404** lub **400**.
 - W odpowiedzi znajduje się pole `message` z komunikatem o błędzie.
 
-<br><br>
+<br>
 
-## 3. Prognoza 5-dniowa dla Warszawy
+### 3. Prognoza 5-dniowa dla Warszawy
 
 **Opis (PL):**  
 Sprawdzenie, czy API zwraca prognozę 5-dniową dla Warszawy.
@@ -53,9 +66,9 @@ Verify that the API returns a 5-day forecast for Warsaw.
 - W odpowiedzi znajduje się pole `list` będące tablicą prognoz.
 - Pole `city.name` ma wartość **"Warsaw"**.
 
-<br><br>
+<br>
 
-## 4. Walidacja danych o wietrze
+### 4. Walidacja danych o wietrze
 
 **Opis (PL):**  
 Sprawdzenie, czy API zwraca poprawne dane o sile i kierunku wiatru oraz czy wartości są w spodziewanym zakresie.
@@ -72,9 +85,9 @@ Verify that the API returns correct wind speed and direction data, and that valu
 - `wind.speed` jest liczbą większą lub równą 0.
 - `wind.deg` jest liczbą z zakresu 0–360.
   
-<br><br>
+<br>
 
-## 5. Walidacja wilgotności, ciśnienia i zachmurzenia
+### 5. Walidacja wilgotności, ciśnienia i zachmurzenia
 
 **Opis (PL):**  
 Sprawdzenie, czy API zwraca dane o wilgotności, ciśnieniu i zachmurzeniu oraz czy wartości są logiczne.
@@ -91,9 +104,9 @@ Verify that the API returns humidity, pressure, and cloudiness data, and that th
 - W odpowiedzi znajduje się pole `main.pressure` (liczba większa od 800).
 - W odpowiedzi znajduje się pole `clouds.all` (liczba 0–100).
 
-<br><br>
+<br>
 
-## 6. Aktualna pogoda i prognoza – porównanie temperatur dla Warszawy
+### 6. Aktualna pogoda i prognoza – porównanie temperatur dla Warszawy
 
 **Opis (PL):**  
 Pobierz aktualną temperaturę z endpointu /weather i zapisz ją. Następnie pobierz temperaturę z najbliższej prognozy z endpointu /forecast i porównaj obie wartości. Wypisz obie temperatury w konsoli.
