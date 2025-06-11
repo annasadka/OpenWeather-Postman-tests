@@ -1,17 +1,25 @@
 # OpenWeather-Postman-tests
+<br>
 
 ## Opis projektu
 Projekt prezentuje przykładowe testy automatyczne API pogodowego OpenWeatherMap wykonane w Postmanie. Celem było przećwiczenie walidacji odpowiedzi API, obsługi błędów i porównania danych z różnych endpointów.
+<br><br>
 
 ## Technologie
 - Postman
 - OpenWeatherMap API
+<br>
+
+## Dokumentacja API
+[OpenWeatherMap API](https://openweathermap.org/api)
+<br><br>
 
 ## Jak uruchomić testy?
 1. Sklonuj repozytorium.
 2. Zaimportuj plik kolekcji do Postmana.
 3. Ustaw swój klucz API jako zmienną środowiskową `api_key`.
 4. Uruchom testy ręcznie lub przez Collection Runner.
+<br>
 
 ## Przypadki testowe
 
