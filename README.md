@@ -93,25 +93,13 @@ Pobierz aktualną temperaturę z endpointu /weather i zapisz ją. Następnie pob
 Fetch the current temperature from the /weather endpoint and save it. Then fetch the temperature from the nearest forecast from the /forecast endpoint and compare both values. Print both temperatures in the console.
 
 **Kroki testowe / Test steps:**
--Wykonaj zapytanie GET do /data/2.5/weather?q=Warsaw.
--W zakładce Tests zapisz temperaturę do zmiennej środowiskowej current_temp.
--Wykonaj zapytanie GET do /data/2.5/forecast?q=Warsaw.
--W zakładce Tests pobierz temperaturę z pierwszego elementu tablicy list.main.temp.
--Porównaj ją ze zmienną current_temp.
--Wypisz obie temperatury w konsoli.
+- Wykonaj zapytanie GET do /data/2.5/weather?q=Warsaw.
+- W zakładce Tests zapisz temperaturę do zmiennej środowiskowej current_temp.
+- Wykonaj zapytanie GET do /data/2.5/forecast?q=Warsaw.
+- W zakładce Tests pobierz temperaturę z pierwszego elementu tablicy list.main.temp.
+- Porównaj ją ze zmienną current_temp.
+- Wypisz obie temperatury w konsoli.
 
 <br><br>
 
-## 7. Prognoza – Warszawa – Porównanie danych z różnych endpointów
 
-**Opis (PL):**  
-Porównaj temperaturę z endpointu `/forecast` z wcześniej zapisaną temperaturą z `/weather` dla Warszawy. Wypisz w konsoli aktualną i prognozowaną temperaturę.
-
-**Description (EN):**  
-Compare the temperature from the `/forecast` endpoint with the previously saved temperature from `/weather` for Warsaw. Print both current and forecasted temperatures in the console and check if the difference does not exceed 3°C.
-
-**Kroki testowe / Test steps:**
-- Wykonaj zapytanie GET do `/data/2.5/forecast?q=Warsaw`.
-- Pobierz temperaturę z pierwszego elementu tablicy `list[0].main.temp`.
-- Porównaj tę wartość z temperaturą zapisaną w zmiennej środowiskowej `current_temp`.
-- Wypisz obie temperatury w konsoli Postmana.
