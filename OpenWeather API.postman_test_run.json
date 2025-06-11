@@ -1,0 +1,314 @@
+{
+	"id": "57a75faf-6d7f-4f53-99a0-95b5f8234e5b",
+	"name": "OpenWeather API",
+	"timestamp": "2025-06-11T18:51:48.129Z",
+	"collection_id": "26741710-4cc6c51e-d892-47aa-a524-08e70cd7583c",
+	"folder_id": 0,
+	"environment_id": "26741710-782041db-b85a-423f-a042-37a5dcfad6cf",
+	"totalPass": 19,
+	"delay": 0,
+	"persist": true,
+	"status": "finished",
+	"startedAt": "2025-06-11T18:51:46.478Z",
+	"totalFail": 1,
+	"results": [
+		{
+			"id": "bb393592-f929-4840-9f2b-4453276e3e3b",
+			"name": "Aktualna pogoda Warszawa",
+			"url": "https://api.openweathermap.org/data/2.5/weather?q=Warsaw&appid=a0bb1ecaa0c040e2cbd9467d25aa3440&units=metric",
+			"time": 50,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Kod statusu to 200": true,
+				"Miasto to Warszawa": true,
+				"Odpowiedź jest w formacie JSON": true,
+				"Odpowiedź zawiera temperaturę": true
+			},
+			"testPassFailCounts": {
+				"Kod statusu to 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Miasto to Warszawa": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Odpowiedź jest w formacie JSON": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Odpowiedź zawiera temperaturę": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				50
+			],
+			"allTests": [
+				{
+					"Kod statusu to 200": true,
+					"Miasto to Warszawa": true,
+					"Odpowiedź jest w formacie JSON": true,
+					"Odpowiedź zawiera temperaturę": true
+				}
+			]
+		},
+		{
+			"id": "51ea240f-e289-4f0e-a542-da451fde3332",
+			"name": "Aktualna pogoda dla nieistniejącego miasta (Neverland)",
+			"url": "https://api.openweathermap.org/data/2.5/weather?q=Neverland&appid=a0bb1ecaa0c040e2cbd9467d25aa3440&units=metric\n",
+			"time": 76,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"Kod statusu to 404 lub 400": true,
+				"Odpowiedź zawiera komunikat o błędzie": true
+			},
+			"testPassFailCounts": {
+				"Kod statusu to 404 lub 400": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Odpowiedź zawiera komunikat o błędzie": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				76
+			],
+			"allTests": [
+				{
+					"Kod statusu to 404 lub 400": true,
+					"Odpowiedź zawiera komunikat o błędzie": true
+				}
+			]
+		},
+		{
+			"id": "7ceadc1d-19ef-4bb4-969c-5a29d445b54e",
+			"name": "Prognoza 5-dniowa dla poprawnego miasta",
+			"url": "https://api.openweathermap.org/data/2.5/forecast?q=Warsaw&appid=a0bb1ecaa0c040e2cbd9467d25aa3440&units=metric",
+			"time": 107,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Odpowiedź zawiera listę prognoz": true,
+				"Miasto to Warszawa": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Odpowiedź zawiera listę prognoz": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Miasto to Warszawa": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				107
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Odpowiedź zawiera listę prognoz": true,
+					"Miasto to Warszawa": true
+				}
+			]
+		},
+		{
+			"id": "48539ad9-d087-474a-9d78-a0628feb82af",
+			"name": "Walidacja danych o wietrze",
+			"url": "https://api.openweathermap.org/data/2.5/weather?q=Warsaw&appid=a0bb1ecaa0c040e2cbd9467d25aa3440&units=metric",
+			"time": 49,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Odpowiedź zawiera dane o wietrze": true,
+				"Siła wiatru to liczba >= 0": true,
+				"Kierunek wiatru to liczba 0-360": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Odpowiedź zawiera dane o wietrze": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Siła wiatru to liczba >= 0": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Kierunek wiatru to liczba 0-360": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				49
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Odpowiedź zawiera dane o wietrze": true,
+					"Siła wiatru to liczba >= 0": true,
+					"Kierunek wiatru to liczba 0-360": true
+				}
+			]
+		},
+		{
+			"id": "d3284818-bf77-41a6-86d4-b36e660df719",
+			"name": "Walidacja wilgotności, ciśnienia i zachmurzenia",
+			"url": "https://api.openweathermap.org/data/2.5/weather?q=Warsaw&appid=a0bb1ecaa0c040e2cbd9467d25aa3440&units=metric",
+			"time": 50,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Kod statusu to 200": true,
+				"Odpowiedź zawiera wilgotność, ciśnienie i zachmurzenie": true,
+				"Wilgotność 0-100": true,
+				"Ciśnienie > 800": true,
+				"Zachmurzenie 0-100": true
+			},
+			"testPassFailCounts": {
+				"Kod statusu to 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Odpowiedź zawiera wilgotność, ciśnienie i zachmurzenie": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Wilgotność 0-100": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Ciśnienie > 800": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Zachmurzenie 0-100": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				50
+			],
+			"allTests": [
+				{
+					"Kod statusu to 200": true,
+					"Odpowiedź zawiera wilgotność, ciśnienie i zachmurzenie": true,
+					"Wilgotność 0-100": true,
+					"Ciśnienie > 800": true,
+					"Zachmurzenie 0-100": true
+				}
+			]
+		},
+		{
+			"id": "ed9bbd53-ff3f-4a43-b0d4-1d0dc48273bd",
+			"name": "Aktualna pogoda – Warszawa - Porównanie danych z różnych endpointów",
+			"url": "https://api.openweathermap.org/data/2.5/weather?q=Warsaw&appid=a0bb1ecaa0c040e2cbd9467d25aa3440&units=metric\n",
+			"time": 52,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				52
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "c79ce85b-893e-4d6c-b165-728ad4cbe270",
+			"name": "Prognoza – Warszawa - Porównanie danych z różnych endpointów",
+			"url": "https://api.openweathermap.org/data/2.5/forecast?q=Warsaw&appid=a0bb1ecaa0c040e2cbd9467d25aa3440&units=metric\n",
+			"time": 100,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Temperatury są identyczne": false,
+				"Wyświetl różnicę temperatur": true
+			},
+			"testPassFailCounts": {
+				"Temperatury są identyczne": {
+					"pass": 0,
+					"fail": 1
+				},
+				"Wyświetl różnicę temperatur": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				100
+			],
+			"allTests": [
+				{
+					"Temperatury są identyczne": false,
+					"Wyświetl różnicę temperatur": true
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 484,
+	"collection": {
+		"requests": [
+			{
+				"id": "bb393592-f929-4840-9f2b-4453276e3e3b",
+				"method": "GET"
+			},
+			{
+				"id": "51ea240f-e289-4f0e-a542-da451fde3332",
+				"method": "GET"
+			},
+			{
+				"id": "7ceadc1d-19ef-4bb4-969c-5a29d445b54e",
+				"method": "GET"
+			},
+			{
+				"id": "48539ad9-d087-474a-9d78-a0628feb82af",
+				"method": "GET"
+			},
+			{
+				"id": "d3284818-bf77-41a6-86d4-b36e660df719",
+				"method": "GET"
+			},
+			{
+				"id": "ed9bbd53-ff3f-4a43-b0d4-1d0dc48273bd",
+				"method": "GET"
+			},
+			{
+				"id": "c79ce85b-893e-4d6c-b165-728ad4cbe270",
+				"method": "GET"
+			}
+		]
+	}
+}
