@@ -25,16 +25,13 @@ Projekt prezentuje przykładowe testy automatyczne API pogodowego OpenWeatherMap
 
 ### 1. Aktualna pogoda Warszawa
 
-**Opis (PL):**  
+**Opis:**  
 Sprawdzenie, czy API zwraca aktualną temperaturę i nazwę miasta Warszawa.
 
-**Description (EN):**  
-Verify that the API returns the current temperature and the city name Warsaw.
-
-**Kroki testowe / Test steps:**
+**Kroki testowe:**
 - Wykonaj zapytanie GET do `/data/2.5/weather?q=Warsaw`.
 
-**Oczekiwane rezultaty/Expected results:**
+**Oczekiwane rezultaty:**
 - Kod odpowiedzi to **200**.
 - W odpowiedzi pole `name` ma wartość **"Warsaw"**.
 - W odpowiedzi pole `main.temp` istnieje i jest liczbą.
@@ -43,13 +40,10 @@ Verify that the API returns the current temperature and the city name Warsaw.
 
 ### 2. Aktualna pogoda dla nieistniejącego miasta (Neverland)
 
-**Opis (PL):**  
+**Opis:**  
 Sprawdzenie obsługi błędów dla fikcyjnego miasta Neverland.
 
-**Description (EN):**  
-Check error handling for a fictional city Neverland.
-
-**Kroki testowe / Test steps:**
+**Kroki testowe:**
 - Wykonaj zapytanie GET do `/data/2.5/weather?q=Neverland`.
   
 **Oczekiwane rezultaty:**
@@ -60,13 +54,11 @@ Check error handling for a fictional city Neverland.
 
 ### 3. Prognoza 5-dniowa dla Warszawy
 
-**Opis (PL):**  
+**Opis:**  
 Sprawdzenie, czy API zwraca prognozę 5-dniową dla Warszawy.
 
-**Description (EN):**  
-Verify that the API returns a 5-day forecast for Warsaw.
 
-**Kroki testowe / Test steps:**
+**Kroki testowe:**
 - Wykonaj zapytanie GET do `/data/2.5/forecast?q=Warsaw`.
 
 **Oczekiwane rezultaty:**
@@ -78,13 +70,11 @@ Verify that the API returns a 5-day forecast for Warsaw.
 
 ### 4. Walidacja danych o wietrze
 
-**Opis (PL):**  
+**Opis:**  
 Sprawdzenie, czy API zwraca poprawne dane o sile i kierunku wiatru oraz czy wartości są w spodziewanym zakresie.
 
-**Description (EN):**  
-Verify that the API returns correct wind speed and direction data, and that values are within the expected range.
 
-**Kroki testowe / Test steps:**
+**Kroki testowe:**
 - Wykonaj zapytanie GET do `/data/2.5/weather?q=Warsaw`.
 
 **Oczekiwane rezultaty:**
@@ -97,13 +87,10 @@ Verify that the API returns correct wind speed and direction data, and that valu
 
 ### 5. Walidacja wilgotności, ciśnienia i zachmurzenia
 
-**Opis (PL):**  
+**Opis:**  
 Sprawdzenie, czy API zwraca dane o wilgotności, ciśnieniu i zachmurzeniu oraz czy wartości są logiczne.
 
-**Description (EN):**  
-Verify that the API returns humidity, pressure, and cloudiness data, and that the values are logical.
-
-**Kroki testowe / Test steps:**
+**Kroki testowe:**
 - Wykonaj zapytanie GET do `/data/2.5/weather?q=Warsaw`.
 
 **Oczekiwane rezultaty:**
@@ -116,11 +103,8 @@ Verify that the API returns humidity, pressure, and cloudiness data, and that th
 
 ### 6. Aktualna pogoda i prognoza – porównanie temperatur dla Warszawy
 
-**Opis (PL):**  
+**Opis:**  
 Pobierz aktualną temperaturę z endpointu /weather i zapisz ją. Następnie pobierz temperaturę z najbliższej prognozy z endpointu /forecast i porównaj obie wartości. Wypisz obie temperatury w konsoli.
-
-**Description (EN):**  
-Fetch the current temperature from the /weather endpoint and save it. Then fetch the temperature from the nearest forecast from the /forecast endpoint and compare both values. Print both temperatures in the console.
 
 **Kroki testowe:**
 1. Wykonaj zapytanie GET do `/data/2.5/weather?q=Warsaw` i zapisz wartość `main.temp` do zmiennej środowiskowej `current_temp`.
